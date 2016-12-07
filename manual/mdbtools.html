@@ -1,0 +1,1291 @@
+<HTML
+><HEAD
+><TITLE
+>PHP Manual</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><META
+HTTP-EQUIV="Content-type"
+CONTENT="text/html; charset=ISO-8859-1"></HEAD
+><BODY
+CLASS="book"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="BOOK"
+><A
+NAME="manual"
+></A
+><DIV
+CLASS="TITLEPAGE"
+><H1
+CLASS="title"
+><A
+NAME="manual"
+></A
+>PHP Manual</H1
+><HR></DIV
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+>I. <A
+HREF="#funcref"
+>Function Reference</A
+></DT
+><DD
+><DL
+><DT
+>I. <A
+HREF="#ref.mdbtools"
+>MDB data file access library</A
+></DT
+></DL
+></DD
+></DL
+></DIV
+><DIV
+CLASS="PART"
+><A
+NAME="funcref"
+></A
+><DIV
+CLASS="TITLEPAGE"
+><H1
+CLASS="title"
+>I. Function Reference</H1
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+>I. <A
+HREF="#ref.mdbtools"
+>MDB data file access library</A
+></DT
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="reference"
+><A
+NAME="ref.mdbtools"
+></A
+><DIV
+CLASS="TITLEPAGE"
+><H1
+CLASS="title"
+>I. MDB data file access library</H1
+><DIV
+CLASS="PARTINTRO"
+><A
+NAME="AEN8"
+></A
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="mdbtools.intro"
+></A
+>Introduction</H1
+><P
+>&#13;  mdbtools provides read access to MDB data files
+  as used by Microsoft Access and its underlying
+  JetEngine.
+
+  It is based on libmdb from the mdbtools package
+  available at http://mdbtools.sourceforge.net/
+
+    </P
+></DIV
+><DIV
+CLASS="section"
+><HR><H1
+CLASS="section"
+><A
+NAME="mdbtools.requirements"
+></A
+>Requirements</H1
+><P
+>This extension requires the following library: mdb</P
+><P
+>This extension requires the following header: mdbtools.h</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H1
+CLASS="section"
+><A
+NAME="mdbtools.install"
+></A
+>Installation</H1
+><P
+>&#13;mdbtools installation prefix
+    </P
+></DIV
+><DIV
+CLASS="section"
+><HR><H1
+CLASS="section"
+><A
+NAME="mdbtools.configuration"
+></A
+>Runtime Configuration</H1
+><P
+>This extension has no configuration directives defined in <TT
+CLASS="filename"
+>php.ini</TT
+>.</P
+></DIV
+><DIV
+CLASS="section"
+><HR><H1
+CLASS="section"
+><A
+NAME="mdbtools.resources"
+></A
+>Resource Types</H1
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="mdbtools.resources.MdbDatabase"
+></A
+><TT
+CLASS="literal"
+>MdbDatabase</TT
+></H2
+><P
+>&#13;          A MDB database resource connected to a *.mdb file.    
+
+     </P
+></DIV
+><DIV
+CLASS="section"
+><HR><H2
+CLASS="section"
+><A
+NAME="mdbtools.resources.MdbTable"
+></A
+><TT
+CLASS="literal"
+>MdbTable</TT
+></H2
+><P
+>&#13;          A table within a MDB database. 
+
+     </P
+></DIV
+></DIV
+><DIV
+CLASS="section"
+><HR><H1
+CLASS="section"
+><A
+NAME="mdbtools.constants"
+></A
+>Predefined Constants</H1
+><DIV
+CLASS="table"
+><A
+NAME="AEN35"
+></A
+><P
+><B
+>Table 1. mdbtools constants</B
+></P
+><TABLE
+BORDER="1"
+CLASS="CALSTABLE"
+><THEAD
+><TR
+><TH
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>name</TH
+><TH
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>value</TH
+><TH
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>descrpition</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&#13;  <TT
+CLASS="constant"
+><B
+>MDB_VER_JET3</B
+></TT
+>
+  (integer)
+ </TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>MDB_VER_JET3</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&#13;  <TT
+CLASS="constant"
+><B
+>MDB_VER_JET4</B
+></TT
+>
+  (integer)
+ </TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>MDB_VER_JET4</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&#13;  <TT
+CLASS="constant"
+><B
+>MDB_BOOL</B
+></TT
+>
+  (integer)
+ </TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>MDB_BOOL</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Type 'Boolean'</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&#13;  <TT
+CLASS="constant"
+><B
+>MDB_BYTE</B
+></TT
+>
+  (integer)
+ </TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>MDB_BYTE</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Type 'Byte'</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&#13;  <TT
+CLASS="constant"
+><B
+>MDB_INT</B
+></TT
+>
+  (integer)
+ </TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>MDB_INT</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Type 'Integer'</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&#13;  <TT
+CLASS="constant"
+><B
+>MDB_LONGINT</B
+></TT
+>
+  (integer)
+ </TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>MDB_LONGINT</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Type 'Long Integer'</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&#13;  <TT
+CLASS="constant"
+><B
+>MDB_MONEY</B
+></TT
+>
+  (integer)
+ </TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>MDB_MONEY</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Type 'Currency'</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&#13;  <TT
+CLASS="constant"
+><B
+>MDB_FLOAT</B
+></TT
+>
+  (integer)
+ </TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>MDB_FLOAT</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Type 'Single'</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&#13;  <TT
+CLASS="constant"
+><B
+>MDB_DOUBLE</B
+></TT
+>
+  (integer)
+ </TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>MDB_DOUBLE</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Type 'Double'</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&#13;  <TT
+CLASS="constant"
+><B
+>MDB_SDATETIME</B
+></TT
+>
+  (integer)
+ </TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>MDB_SDATETIME</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Type 'DateTime (Short)'</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&#13;  <TT
+CLASS="constant"
+><B
+>MDB_TEXT</B
+></TT
+>
+  (integer)
+ </TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>MDB_TEXT</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Type 'Text'</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&#13;  <TT
+CLASS="constant"
+><B
+>MDB_OLE</B
+></TT
+>
+  (integer)
+ </TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>MDB_OLE</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Type 'OLE'</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&#13;  <TT
+CLASS="constant"
+><B
+>MDB_MEMO</B
+></TT
+>
+  (integer)
+ </TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>MDB_MEMO</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Type 'Memo/Hyperlink'</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&#13;  <TT
+CLASS="constant"
+><B
+>MDB_REPID</B
+></TT
+>
+  (integer)
+ </TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>MDB_REPID</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Type 'Replication ID'</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>&#13;  <TT
+CLASS="constant"
+><B
+>MDB_NUMERIC</B
+></TT
+>
+  (integer)
+ </TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>MDB_NUMERIC</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Type 'Numeric'</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+><A
+HREF="#function.mdb-close"
+>mdb_close</A
+>&nbsp;--&nbsp;Close an open Access .mdb file</DT
+><DT
+><A
+HREF="#function.mdb-fetch-assoc"
+>mdb_fetch_assoc</A
+>&nbsp;--&nbsp;Get a table row as an associative array</DT
+><DT
+><A
+HREF="#function.mdb-fetch-row"
+>mdb_fetch_row</A
+>&nbsp;--&nbsp;Get a table row as an enumerated array</DT
+><DT
+><A
+HREF="#function.mdb-num-fields"
+>mdb_num_fields</A
+>&nbsp;--&nbsp;Get number of table columns</DT
+><DT
+><A
+HREF="#function.mdb-num-rows"
+>mdb_num_rows</A
+>&nbsp;--&nbsp;Get number of table rows</DT
+><DT
+><A
+HREF="#function.mdb-open"
+>mdb_open</A
+>&nbsp;--&nbsp;Open an Access .mdb file for reading</DT
+><DT
+><A
+HREF="#function.mdb-table-close"
+>mdb_table_close</A
+>&nbsp;--&nbsp;Close an opened table</DT
+><DT
+><A
+HREF="#function.mdb-table-fields"
+>mdb_table_fields</A
+>&nbsp;--&nbsp;Get field type information for all fields in a table</DT
+><DT
+><A
+HREF="#function.mdb-table-open"
+>mdb_table_open</A
+>&nbsp;--&nbsp;Open a table in an .mdb file for reading</DT
+><DT
+><A
+HREF="#function.mdb-tables"
+>mdb_tables</A
+>&nbsp;--&nbsp;Get names of tables in an .mdb file</DT
+><DT
+><A
+HREF="#function.mdb-type-name"
+>mdb_type_name</A
+>&nbsp;--&nbsp;Look up the name for a field type</DT
+><DT
+><A
+HREF="#function.mdb-version"
+>mdb_version</A
+>&nbsp;--&nbsp;Get Jet Engine version number from .mdb file</DT
+></DL
+></DIV
+></DIV
+><H1
+><A
+NAME="function.mdb-close"
+></A
+>mdb_close</H1
+><DIV
+CLASS="refnamediv"
+><A
+NAME="AEN135"
+></A
+><P
+>    (no version information, might be only in CVS)</P
+>mdb_close&nbsp;--&nbsp;Close an open Access .mdb file</DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="AEN138"
+></A
+><H2
+>Description</H2
+>void <B
+CLASS="methodname"
+>mdb_close</B
+> ( resource db)<BR
+></BR
+><P
+>&#13;      Close a MDB file previously opened with 
+      <A
+HREF="#function.mdb-open"
+><B
+CLASS="function"
+>mdb_open()</B
+></A
+>.
+    </P
+></DIV
+><H1
+><A
+NAME="function.mdb-fetch-assoc"
+></A
+>mdb_fetch_assoc</H1
+><DIV
+CLASS="refnamediv"
+><A
+NAME="AEN149"
+></A
+><P
+>    (no version information, might be only in CVS)</P
+>mdb_fetch_assoc&nbsp;--&nbsp;Get a table row as an associative array</DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="AEN152"
+></A
+><H2
+>Description</H2
+>array <B
+CLASS="methodname"
+>mdb_fetch_assoc</B
+> ( resource table)<BR
+></BR
+><P
+>&#13;      <A
+HREF="#function.mdb-fetch-row"
+><B
+CLASS="function"
+>mdb_fetch_row()</B
+></A
+> reads a single row from
+      <TT
+CLASS="parameter"
+><I
+>table</I
+></TT
+> and returns the data as an
+      array with column names as index and field contents as
+      values.
+    </P
+><P
+>&#13;      See also <A
+HREF="#function.mdb-fetch-row"
+><B
+CLASS="function"
+>mdb_fetch_row()</B
+></A
+>.
+    </P
+></DIV
+><H1
+><A
+NAME="function.mdb-fetch-row"
+></A
+>mdb_fetch_row</H1
+><DIV
+CLASS="refnamediv"
+><A
+NAME="AEN166"
+></A
+><P
+>    (no version information, might be only in CVS)</P
+>mdb_fetch_row&nbsp;--&nbsp;Get a table row as an enumerated array</DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="AEN169"
+></A
+><H2
+>Description</H2
+>array <B
+CLASS="methodname"
+>mdb_fetch_row</B
+> ( resource table)<BR
+></BR
+><P
+>&#13;      <B
+CLASS="function"
+>mdb_fetch_row()</B
+> reads a single row from
+      <TT
+CLASS="parameter"
+><I
+>table</I
+></TT
+> and returns the data as an
+      numericaly indexed array.
+    </P
+><P
+>&#13;      See also <A
+HREF="#function.mdb-fetch-assoc"
+><B
+CLASS="function"
+>mdb_fetch_assoc()</B
+></A
+>.
+    </P
+></DIV
+><H1
+><A
+NAME="function.mdb-num-fields"
+></A
+>mdb_num_fields</H1
+><DIV
+CLASS="refnamediv"
+><A
+NAME="AEN183"
+></A
+><P
+>    (no version information, might be only in CVS)</P
+>mdb_num_fields&nbsp;--&nbsp;Get number of table columns</DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="AEN186"
+></A
+><H2
+>Description</H2
+>int <B
+CLASS="methodname"
+>mdb_num_fields</B
+> ( resource table)<BR
+></BR
+><P
+>&#13;      <B
+CLASS="function"
+>mdb_num_fields()</B
+> returns the number of
+      columns in <TT
+CLASS="parameter"
+><I
+>table</I
+></TT
+>.
+    </P
+><P
+>&#13;      See also <A
+HREF="#function.mdb-num-rows"
+><B
+CLASS="function"
+>mdb_num_rows()</B
+></A
+> and 
+      <A
+HREF="#function.mdb-table-fields"
+><B
+CLASS="function"
+>mdb_table_fields()</B
+></A
+>.
+    </P
+></DIV
+><H1
+><A
+NAME="function.mdb-num-rows"
+></A
+>mdb_num_rows</H1
+><DIV
+CLASS="refnamediv"
+><A
+NAME="AEN201"
+></A
+><P
+>    (no version information, might be only in CVS)</P
+>mdb_num_rows&nbsp;--&nbsp;Get number of table rows</DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="AEN204"
+></A
+><H2
+>Description</H2
+>int <B
+CLASS="methodname"
+>mdb_num_rows</B
+> ( resource table)<BR
+></BR
+><P
+>&#13;      <B
+CLASS="function"
+>mdb_num_rows()</B
+> returns the number of
+      rows in <TT
+CLASS="parameter"
+><I
+>table</I
+></TT
+>.
+    </P
+><P
+>&#13;      See also <A
+HREF="#function.mdb-num-fields"
+><B
+CLASS="function"
+>mdb_num_fields()</B
+></A
+> and 
+      <A
+HREF="#function.mdb-table-fields"
+><B
+CLASS="function"
+>mdb_table_fields()</B
+></A
+>.
+    </P
+></DIV
+><H1
+><A
+NAME="function.mdb-open"
+></A
+>mdb_open</H1
+><DIV
+CLASS="refnamediv"
+><A
+NAME="AEN219"
+></A
+><P
+>    (no version information, might be only in CVS)</P
+>mdb_open&nbsp;--&nbsp;Open an Access .mdb file for reading</DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="AEN222"
+></A
+><H2
+>Description</H2
+>resource MdbDatabase <B
+CLASS="methodname"
+>mdb_open</B
+> ( string path)<BR
+></BR
+><P
+>&#13;     Open the MDB file <TT
+CLASS="parameter"
+><I
+>path</I
+></TT
+> for reading.
+    </P
+><P
+>&#13;     See also <A
+HREF="#function.mdb-close"
+><B
+CLASS="function"
+>mdb_close()</B
+></A
+>.
+    </P
+></DIV
+><H1
+><A
+NAME="function.mdb-table-close"
+></A
+>mdb_table_close</H1
+><DIV
+CLASS="refnamediv"
+><A
+NAME="AEN235"
+></A
+><P
+>    (no version information, might be only in CVS)</P
+>mdb_table_close&nbsp;--&nbsp;Close an opened table</DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="AEN238"
+></A
+><H2
+>Description</H2
+>void <B
+CLASS="methodname"
+>mdb_table_close</B
+> ( resource table)<BR
+></BR
+><P
+>&#13;      Close access to <TT
+CLASS="parameter"
+><I
+>table</I
+></TT
+>.
+    </P
+></DIV
+><H1
+><A
+NAME="function.mdb-table-fields"
+></A
+>mdb_table_fields</H1
+><DIV
+CLASS="refnamediv"
+><A
+NAME="AEN249"
+></A
+><P
+>    (no version information, might be only in CVS)</P
+>mdb_table_fields&nbsp;--&nbsp;Get field type information for all fields in a table</DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="AEN252"
+></A
+><H2
+>Description</H2
+>array <B
+CLASS="methodname"
+>mdb_table_fields</B
+> ( resource table)<BR
+></BR
+><P
+>&#13;      <A
+HREF="#function.mdb-num-fields"
+><B
+CLASS="function"
+>mdb_num_fields()</B
+></A
+> returns type information
+      about all columns in <TT
+CLASS="parameter"
+><I
+>table</I
+></TT
+>. It returns
+      an array with one element per column that itself is an array
+      of name/value pairs describing the column.
+    </P
+><P
+>&#13;      Currently <TT
+CLASS="literal"
+>name</TT
+>, <TT
+CLASS="literal"
+>type</TT
+>,
+      <TT
+CLASS="literal"
+>size</TT
+>, <TT
+CLASS="literal"
+>prec</TT
+>, 
+      <TT
+CLASS="literal"
+>scale</TT
+> and <TT
+CLASS="literal"
+>isfixed</TT
+> are
+      extracted. 
+    </P
+><P
+>&#13;     <TT
+CLASS="literal"
+>type</TT
+> is returned as an integer. The following
+     constants correspond to the returned type codes:   
+  <TT
+CLASS="constant"
+><B
+>MDB_BOOL</B
+></TT
+>,
+  <TT
+CLASS="constant"
+><B
+>MDB_BYTE</B
+></TT
+>,
+  <TT
+CLASS="constant"
+><B
+>MDB_INT</B
+></TT
+>,
+  <TT
+CLASS="constant"
+><B
+>MDB_LONGINT</B
+></TT
+>,
+  <TT
+CLASS="constant"
+><B
+>MDB_MONEY</B
+></TT
+>,
+  <TT
+CLASS="constant"
+><B
+>MDB_FLOAT</B
+></TT
+>,
+  <TT
+CLASS="constant"
+><B
+>MDB_DOUBLE</B
+></TT
+>,
+  <TT
+CLASS="constant"
+><B
+>MDB_SDATETIME</B
+></TT
+>,
+  <TT
+CLASS="constant"
+><B
+>MDB_TEXT</B
+></TT
+>,
+  <TT
+CLASS="constant"
+><B
+>MDB_OLE</B
+></TT
+>,
+  <TT
+CLASS="constant"
+><B
+>MDB_MEMO</B
+></TT
+>,
+  <TT
+CLASS="constant"
+><B
+>MDB_REPID</B
+></TT
+> and
+  <TT
+CLASS="constant"
+><B
+>MDB_NUMERIC</B
+></TT
+>.
+    </P
+><P
+>&#13;      See also <A
+HREF="#function.mdb-type-name"
+><B
+CLASS="function"
+>mdb_type_name()</B
+></A
+>.
+    </P
+></DIV
+><H1
+><A
+NAME="function.mdb-table-open"
+></A
+>mdb_table_open</H1
+><DIV
+CLASS="refnamediv"
+><A
+NAME="AEN288"
+></A
+><P
+>    (no version information, might be only in CVS)</P
+>mdb_table_open&nbsp;--&nbsp;Open a table in an .mdb file for reading</DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="AEN291"
+></A
+><H2
+>Description</H2
+>resource MdbTable <B
+CLASS="methodname"
+>mdb_table_open</B
+> ( resource db, string table)<BR
+></BR
+><P
+>&#13;      Return the names of all tables within the database <TT
+CLASS="parameter"
+><I
+>db</I
+></TT
+>
+      as an array of strings. Internal system tables like <TT
+CLASS="literal"
+>MSysObjects</TT
+> 
+      are ignored unless the optional parameter <TT
+CLASS="parameter"
+><I
+>systabs</I
+></TT
+> is set 
+      to <TT
+CLASS="constant"
+><B
+>TRUE</B
+></TT
+>.
+    </P
+></DIV
+><H1
+><A
+NAME="function.mdb-tables"
+></A
+>mdb_tables</H1
+><DIV
+CLASS="refnamediv"
+><A
+NAME="AEN308"
+></A
+><P
+>    (no version information, might be only in CVS)</P
+>mdb_tables&nbsp;--&nbsp;Get names of tables in an .mdb file</DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="AEN311"
+></A
+><H2
+>Description</H2
+>array <B
+CLASS="methodname"
+>mdb_tables</B
+> ( resource db [, bool systabs])<BR
+></BR
+><P
+>&#13;      Return the names of all tables within the database <TT
+CLASS="parameter"
+><I
+>db</I
+></TT
+>
+      as an array of strings. Internal system tables like MSysObjects are ignored
+      unless the optional parameter <TT
+CLASS="parameter"
+><I
+>systabs</I
+></TT
+> is set to <TT
+CLASS="constant"
+><B
+>TRUE</B
+></TT
+>.
+    </P
+></DIV
+><H1
+><A
+NAME="function.mdb-type-name"
+></A
+>mdb_type_name</H1
+><DIV
+CLASS="refnamediv"
+><A
+NAME="AEN327"
+></A
+><P
+>    (no version information, might be only in CVS)</P
+>mdb_type_name&nbsp;--&nbsp;Look up the name for a field type</DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="AEN330"
+></A
+><H2
+>Description</H2
+>string <B
+CLASS="methodname"
+>mdb_type_name</B
+> ( resource db, int typecode)<BR
+></BR
+><P
+>&#13;      <B
+CLASS="function"
+>mdb_type_name()</B
+> returns the textual type name
+      for the <TT
+CLASS="parameter"
+><I
+>typecode</I
+></TT
+> in database <TT
+CLASS="parameter"
+><I
+>db</I
+></TT
+>.
+    </P
+></DIV
+><H1
+><A
+NAME="function.mdb-version"
+></A
+>mdb_version</H1
+><DIV
+CLASS="refnamediv"
+><A
+NAME="AEN346"
+></A
+><P
+>    (no version information, might be only in CVS)</P
+>mdb_version&nbsp;--&nbsp;Get Jet Engine version number from .mdb file</DIV
+><DIV
+CLASS="refsect1"
+><A
+NAME="AEN349"
+></A
+><H2
+>Description</H2
+>int <B
+CLASS="methodname"
+>mdb_version</B
+> ( resource db)<BR
+></BR
+><P
+>&#13;      Return the JetEngine version number of <TT
+CLASS="parameter"
+><I
+>db</I
+></TT
+>.
+      This is either <TT
+CLASS="constant"
+><B
+>MDB_VER_JET3</B
+></TT
+> or 
+      <TT
+CLASS="constant"
+><B
+>MDB_VER_JET4</B
+></TT
+>.
+    </P
+></DIV
+></DIV
+></DIV
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,9 @@
+// $ Id: $
+// vim:ft=javascript
+
+ARG_WITH('mdbtools', 'MDB data file access library', 'no');
+
+if (PHP_MDBTOOLS == "yes") {
+  EXTENSION("mdbtools", "mdbtools.c");
+  AC_DEFINE("HAVE_MDBTOOLS", 1, "mdbtools support");
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- $Revision: 1.9 $ -->
+  <refentry id="function.mdb-version">
+   <refnamediv>
+    <refname>mdb_version</refname>
+    <refpurpose>Get Jet Engine version number from .mdb file</refpurpose>
+   </refnamediv>
+   <refsect1>
+    <title>Description</title>
+     <methodsynopsis>
+      <type>int</type><methodname>mdb_version</methodname>
+      <methodparam><type>resource</type><parameter>db</parameter></methodparam>
+     </methodsynopsis>
+     <para>
+    &lt;para&gt;
+      Return the JetEngine version number of &lt;parameter&gt;db&lt;/parameter&gt;.
+      This is either &lt;constant&gt;MDB_VER_JET3&lt;/constant&gt; or 
+      &lt;constant&gt;MDB_VER_JET4&lt;/constant&gt;.
+    &lt;/para&gt;
+     </para>
+
+   </refsect1>
+  </refentry>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:1
+sgml-indent-data:t
+indent-tabs-mode:nil
+sgml-parent-document:nil
+sgml-default-dtd-file:"../../../../manual.ced"
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+vim600: syn=xml fen fdm=syntax fdl=2 si
+vim: et tw=78 syn=sgml
+vi: ts=1 sw=1
+-->

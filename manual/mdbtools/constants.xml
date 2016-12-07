@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<!-- $Revision: 1.1 $ -->
+<section id='mdbtools.constants' xmlns='http://docbook.org/ns/docbook' xmlns:xlink='http://www.w3.org/1999/xlink'>
+ &reftitle.constants;
+ &extension.constants;
+ <para>
+  <variablelist>
+
+   <varlistentry>
+    <term>
+     <constant>MDB_VER_JET3</constant> 
+     (<type>int</type>)
+    </term>
+    <listitem>
+     <simpara>
+           
+     </simpara>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry>
+    <term>
+     <constant>MDB_VER_JET4</constant> 
+     (<type>int</type>)
+    </term>
+    <listitem>
+     <simpara>
+           
+     </simpara>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry>
+    <term>
+     <constant>MDB_BOOL</constant> 
+     (<type>int</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Type 'Boolean'     
+     </simpara>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry>
+    <term>
+     <constant>MDB_BYTE</constant> 
+     (<type>int</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Type 'Byte'     
+     </simpara>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry>
+    <term>
+     <constant>MDB_INT</constant> 
+     (<type>int</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Type 'Integer'     
+     </simpara>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry>
+    <term>
+     <constant>MDB_LONGINT</constant> 
+     (<type>int</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Type 'Long Integer'     
+     </simpara>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry>
+    <term>
+     <constant>MDB_MONEY</constant> 
+     (<type>int</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Type 'Currency'     
+     </simpara>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry>
+    <term>
+     <constant>MDB_FLOAT</constant> 
+     (<type>int</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Type 'Single'     
+     </simpara>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry>
+    <term>
+     <constant>MDB_DOUBLE</constant> 
+     (<type>int</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Type 'Double'     
+     </simpara>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry>
+    <term>
+     <constant>MDB_SDATETIME</constant> 
+     (<type>int</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Type 'DateTime (Short)'     
+     </simpara>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry>
+    <term>
+     <constant>MDB_TEXT</constant> 
+     (<type>int</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Type 'Text'     
+     </simpara>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry>
+    <term>
+     <constant>MDB_OLE</constant> 
+     (<type>int</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Type 'OLE'     
+     </simpara>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry>
+    <term>
+     <constant>MDB_MEMO</constant> 
+     (<type>int</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Type 'Memo/Hyperlink'     
+     </simpara>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry>
+    <term>
+     <constant>MDB_REPID</constant> 
+     (<type>int</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Type 'Replication ID'     
+     </simpara>
+    </listitem>
+   </varlistentry>
+
+   <varlistentry>
+    <term>
+     <constant>MDB_NUMERIC</constant> 
+     (<type>int</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Type 'Numeric'     
+     </simpara>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+ </para>
+</section>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:1
+sgml-indent-data:t
+indent-tabs-mode:nil
+sgml-parent-document:nil
+sgml-default-dtd-file:"../../../manual.ced"
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+vim600: syn=xml fen fdm=syntax fdl=2 si
+vim: et tw=78 syn=sgml
+vi: ts=1 sw=1
+-->
