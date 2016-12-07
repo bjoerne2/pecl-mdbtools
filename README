@@ -23,7 +23,7 @@ BUILDING ON UNIX etc.
 
 To compile your new extension, you will have to execute the following steps:
 
-1.  $ ./phpize
+1.  $ phpize
 2.  $ ./configure [--with-mdbtools=...] 
 3.  $ make
 4.  $ make test
