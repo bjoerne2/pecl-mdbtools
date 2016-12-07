@@ -125,10 +125,6 @@ PHP_MINIT_FUNCTION(mdbtools)
 						   NULL, "MdbDatabase", module_number);
 	le_MdbTable = zend_register_list_destructors_ex(MdbTable_dtor, 
 						   NULL, "MdbTable", module_number);
-	do {
-		mdb_init();
-	} while (0);
-
 	return SUCCESS;
 }
 /* }}} */
@@ -137,9 +133,7 @@ PHP_MINIT_FUNCTION(mdbtools)
 /* {{{ PHP_MSHUTDOWN_FUNCTION */
 PHP_MSHUTDOWN_FUNCTION(mdbtools)
 {
-	do {
-		mdb_exit();
-	} while (0);
+	/* add your stuff here */
 
 	return SUCCESS;
 }
